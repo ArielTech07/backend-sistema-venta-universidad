@@ -1,10 +1,21 @@
+### Spring Boot & Maven ###
 HELP.md
 target/
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+### Archivos de Compilación / Binarios ###
+out/
+bin/
+build/
+dist/
+*.class
+*.jar
+*.war
+*.ear
+
+### STS / Eclipse ###
 .apt_generated
 .classpath
 .factorypath
@@ -13,54 +24,62 @@ target/
 .springBeans
 .sts4-cache
 
-### Archivos de Compilación / Binarios ###
-out/
-bin/
-target/
-build/
-dist/
-*.class
-*.jar
-*.war
-*.ear
-
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
 
 ### VS Code ###
 .vscode/
 
-### Credenciales y Seguridad ###
-# Archivos de configuración con contraseñas de BD y credenciales
+### Credenciales, Secretos y Seguridad ###
+# Archivos de configuración que contienen contraseñas de BD
 **/application.properties
-**/application*.properties
-**/application*.yml
-**/application*.yaml
+**/application-*.properties
+**/application.yml
+**/application-*.yml
+**/application.yaml
+**/application-*.yaml
+
+# Excepción permitida para que el repositorio tenga una plantilla de configuración
+!**/application.properties.example
+!**/application-example.properties
+!**/application.yml.example
+!**/application.yaml.example
+
+# Variables de entorno y llaves
+.env
+.env.*
 *.env
 *.env.*
 *.key
 *.pem
 *.p12
 *.jks
+*.keystore
+*.cer
+*.crt
 credentials.json
 secrets/
+*.secret
 
-### NetBeans ###
-nbproject/private/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+### Logs y Auditoría ###
+*.log
+logs/
+log/
+
+### SO / Temporales ###
+.DS_Store
+Thumbs.db
+Desktop.ini
+*$*
+*.tmp
+*.bak
+*.swp

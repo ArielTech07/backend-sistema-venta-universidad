@@ -1,0 +1,13 @@
+spring.application.name=aplication-cumpita-sac
+server.port=8080
+
+# Conexión a MySQL (reemplazar con credenciales locales)
+spring.datasource.url=jdbc:mysql://localhost:3306/cumpita_db?createDatabaseIfNotExist=true
+spring.datasource.username=TU_USUARIO
+spring.datasource.password=TU_PASSWORD
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA / Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
