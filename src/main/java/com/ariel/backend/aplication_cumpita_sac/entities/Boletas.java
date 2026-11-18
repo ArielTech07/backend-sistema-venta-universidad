@@ -1,30 +1,23 @@
 package com.ariel.backend.aplication_cumpita_sac.entities;
 
 import java.time.LocalDate;
+import java.util.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
 @Table(name = "boletas")
-@Getter 
-@Setter 
-@NoArgsConstructor 
-@AllArgsConstructor   
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Boletas {
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
+    private Long id;
 
     private String numeroBoleta;
     private double subTotal;
@@ -33,8 +26,11 @@ public class Boletas {
     private LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "cliente_id",nullable = false)  
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Clientes cliente;
-    
-    
+
+    @OneToMany(mappedBy = "boleta", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("boleta")
+    private List<DetalleBoleta> detalles = new ArrayList<>();
+
 }

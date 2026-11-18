@@ -1,5 +1,7 @@
 package com.ariel.backend.aplication_cumpita_sac.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoletaRequest {
-    public String numeroBoleta;
-    public String dniCliente;
-    public double subtotal;
-    public double igv;
-    public double total;
+    private String numeroBoleta;
+    private String dniCliente;
+    private List<DetalleRequest> detalles;
 }

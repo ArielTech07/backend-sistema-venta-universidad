@@ -12,13 +12,13 @@ import lombok.Setter;
 
 @Table(name = "productos")
 @Entity
-@Getter 
+@Getter
 @Setter
-@NoArgsConstructor 
-@AllArgsConstructor    
+@NoArgsConstructor
+@AllArgsConstructor
 public class Productos {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String tipo;
